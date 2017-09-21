@@ -79,7 +79,6 @@
         // Client ID and API key from the Developer Console
         var CLIENT_ID = '479278418553-vcb2qr6fdmu86n499jhh8gc8d3irccm6.apps.googleusercontent.com';
         var client_2 = '524164983290-7dosi7ah0ugjlbker0c6am0ulrbai74c.apps.googleusercontent.com';
-        var client_3 = '534533804890-acu23tf715kula7dblm1tbscv14ecvba.apps.googleusercontent.com';
 
         // Array of API discovery doc URLs for APIs used by the quickstart
         var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
@@ -97,7 +96,6 @@
         function handleClientLoad() {
             gapi.load('client:auth2', initClient);
             gapi.load('client:auth2', initClient2);
-            gapi.load('client:auth2', initClient3);
         }
 
         /**
@@ -107,7 +105,7 @@
         function initClient() {
             gapi.client.init({
                 discoveryDocs: DISCOVERY_DOCS,
-                clientId: client_2,
+                clientId: CLIENT_ID,
                 scope: SCOPES
             }).then(function () {
                 // Listen for sign-in state changes.
@@ -135,22 +133,6 @@
                 signoutButton.onclick = handleSignoutClick;
             });
         }
-
-        // function initClient3() {
-        //   gapi.client.init({
-        //     discoveryDocs: DISCOVERY_DOCS,
-        //     clientId: client_2,
-        //     scope: SCOPES
-        //   }).then(function () {
-        //     // Listen for sign-in state changes.
-        //     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
-
-        //     // Handle the initial sign-in state.
-        //     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-        //     authorizeButton.onclick = handleAuthClick;
-        //     signoutButton.onclick = handleSignoutClick;
-        //   });
-        // }
 
         /**
          *  Called when the signed in status changes, to update the UI

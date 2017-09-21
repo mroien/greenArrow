@@ -20,7 +20,7 @@ def live_map(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return render(request, 'map.html')
+        return render(request, 'liveNewsLinks.html')
     else:
         return render(request, 'index.html')
 
