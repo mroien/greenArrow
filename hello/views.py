@@ -15,12 +15,16 @@ def index(request):
 
 
 def live_map(request):
+    return render(request, 'map.html')
+
+
+def live_news_links(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return render(request, 'liveNewsLinks.html')
+        return render(request, 'live_news_links.html')
     else:
         return render(request, 'index.html')
 
