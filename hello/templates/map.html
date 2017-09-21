@@ -1,201 +1,197 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" >
-	<head>
-		<meta http-equiv="content-type" content="text/html" charset="utf-8" />
-		<title>AJC-Live_map</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Normal" >
-		<link rel="StyleSheet" href="{% static "css/AJC-Live_map.css" %}" />
-		<script src="http://exportkit.com/cdn/js/ek-googlefont-autoloader-v2-min.js"></script>
-		<!-- Add your custom HEAD content here -->
+<html>
 
-	</head>
-	<body>
-		<div id="content-container" >
+<head>
 
-			<div id="ajc_live___map"  >
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>AJC Live Map</title>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"
+            type="text/javascript"></script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 800px;"></div>
 
-				<div id="bkg_copy"  >
-					<div id="rectangle_2" >
-						<svg width="1921" height="1400" xmlns="http://www.w3.org/2000/svg">
-							<path fill="#E8E8E8" d="M1 1 L1922 1 L1922 1401 L1 1401 L1 1 "/>
-						</svg>
-					</div>
+    <script type="text/javascript">
+        var locations = [
+          ['Atlanta Journal Constitution', 33.92273, -84.3486237, 4],
+          ['Cumming', 34.203527, -84.1657348, 5]
 
-				</div>
+        ];
+        var infoWindowContent = [
+              ['<div class="info_content">'+
+                  '<h3>Live from AJC Hackathon</h3>' +
+                  '<iframe width="460" height="315" id="usr1" name="User1" src="https://www.youtube.com/embed/live_stream?channel=UCHJIR0Laf0D1afa53Z25QQQ" frameborder="0" allowfullscreen></iframe>'+
+              '</div>'],
 
-				<div id="map"  >
-					<img src="{% static "u_s_a_.png" %}" id="u_s_a_" />
+              ['<div class="info_content">'+
+                  '<h3>Live from Cumming</h3>' +
+                  '<iframe width="460" height="315" id="usr2" name="User2" src="https://www.youtube.com/embed/live_stream?channel=UC8fw-XD66TdvkF37u2wb6dA" frameborder="0" allowfullscreen></iframe>'+
+              '</div>']
+        ];
 
-					<div id="states"  >
-						<div id="ga" >
-							GA
-						</div>
 
-					</div>
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: new google.maps.LatLng(33.92273, -84.3486237),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-				</div>
+        var infowindow = new google.maps.InfoWindow();
 
-				<div id="list"  >
-					<div id="rectangle_4" >
-						<svg width="344" height="100" xmlns="http://www.w3.org/2000/svg">
-							<path fill="#000000" d="M11 1 L335 1 C340.523 1 345 5.477 345 11 L345 91 C345 96.523 340.523 101 335 101 L11 101 C5.477 101 1 96.523 1 91 L1 11 C1 5.477 5.477 1 11 1 " opacity="0.8"/>
-						</svg>
-					</div>
-					<img src="{% static "e_next_page_.png" %}" id="_e_next_page_" />
-					<div id="live_stream" >
-						Live Stream
-					</div>
-					<div id="_e_ellipse_897" >
-						<svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-							<path fill="#FF0000" d="M10 1 C14.971 1 19 5.029 19 10 C19 14.971 14.971 19 10 19 C5.029 19 1 14.971 1 10 C1 5.029 5.029 1 10 1 "/>
-						</svg>
-					</div>
+        var marker, i;
 
-				</div>
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
 
-				<div id="live_bullets"  >
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(infoWindowContent[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    </script>
+    <script type="text/javascript">
+        // Client ID and API key from the Developer Console
+        var CLIENT_ID = '479278418553-vcb2qr6fdmu86n499jhh8gc8d3irccm6.apps.googleusercontent.com';
+        var client_2 = '524164983290-7dosi7ah0ugjlbker0c6am0ulrbai74c.apps.googleusercontent.com';
+        var client_3 = '534533804890-acu23tf715kula7dblm1tbscv14ecvba.apps.googleusercontent.com';
 
-					<div id="_e_group_6"  >
-						<div id="ellipse_896_copy" >
-							<svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#0A589A" d="M13.5 1 C20.404 1 26 6.597 26 13.5 C26 20.404 20.404 26 13.5 26 C6.596 26 1 20.404 1 13.5 C1 6.597 6.596 1 13.5 1 "/>
-							</svg>
-						</div>
+        // Array of API discovery doc URLs for APIs used by the quickstart
+        var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
 
-					</div>
+        // Authorization scopes required by the API. If using multiple scopes,
+        // separated them with spaces.
+        var SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
 
-					<div id="_e_group_6_copy"  >
-						<div id="_e_ellipse_896_copy" >
-							<svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#0A589A" d="M13.5 1 C20.404 1 26 6.597 26 13.5 C26 20.404 20.404 26 13.5 26 C6.596 26 1 20.404 1 13.5 C1 6.597 6.596 1 13.5 1 "/>
-							</svg>
-						</div>
+        var authorizeButton = document.getElementById('authorize-button');
+        var signoutButton = document.getElementById('signout-button');
 
-					</div>
+        /**
+         *  On load, called to load the auth2 library and API client library.
+         */
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+            gapi.load('client:auth2', initClient2);
+            gapi.load('client:auth2', initClient3);
+        }
 
-				</div>
+        /**
+         *  Initializes the API client library and sets up sign-in state
+         *  listeners.
+         */
+        function initClient() {
+            gapi.client.init({
+                discoveryDocs: DISCOVERY_DOCS,
+                clientId: client_2,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-				<div id="channels"  >
-					<div id="rectangle_7" >
-						<svg width="330" height="424" xmlns="http://www.w3.org/2000/svg">
-							<path fill="#000000" d="M1 1 L331 1 L331 424.765 L1 424.765 L1 1 M2 113 L2 112 L2 113 " opacity="0.8"/>
-						</svg>
-					</div>
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            });
+        }
 
-					<div id="group_9"  >
-						<div id="shape_752" >
-							<svg width="330" height="1" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 2 L1 1 L331 1 L331 2 L1 2 " opacity="0.25"/>
-							</svg>
-						</div>
-						<div id="shape_752_copy" >
-							<svg width="330" height="1" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 2 L1 1 L331 1 L331 2 L1 2 " opacity="0.25"/>
-							</svg>
-						</div>
-						<div id="shape_752_copy_2" >
-							<svg width="330" height="1" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 2 L1 1 L331 1 L331 2 L1 2 " opacity="0.25"/>
-							</svg>
-						</div>
-						<div id="shape_752_copy_3" >
-							<svg width="330" height="1" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 2 L1 1 L331 1 L331 2 L1 2 " opacity="0.25"/>
-							</svg>
-						</div>
-						<div id="shape_752_copy_4" >
-							<svg width="330" height="1" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 2 L1 1 L331 1 L331 2 L1 2 " opacity="0.25"/>
-							</svg>
-						</div>
+        function initClient2() {
+            gapi.client.init({
+                discoveryDocs: DISCOVERY_DOCS,
+                clientId: client_2,
+                scope: SCOPES
+            }).then(function () {
+                // Listen for sign-in state changes.
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-					</div>
+                // Handle the initial sign-in state.
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                authorizeButton.onclick = handleAuthClick;
+                signoutButton.onclick = handleSignoutClick;
+            });
+        }
 
-					<div id="group_10"  >
-						<div id="_e_rectangle_759" >
-							<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 1 L31 1 L31 31 L1 31 L1 1 "/>
-							</svg>
-						</div>
-						<div id="_e_rectangle_759_copy" >
-							<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 1 L31 1 L31 31 L1 31 L1 1 "/>
-							</svg>
-						</div>
-						<div id="_e_rectangle_759_copy_2" >
-							<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 1 L31 1 L31 31 L1 31 L1 1 "/>
-							</svg>
-						</div>
-						<div id="_e_rectangle_759_copy_3" >
-							<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 1 L31 1 L31 31 L1 31 L1 1 "/>
-							</svg>
-						</div>
-						<div id="_e_rectangle_759_copy_4" >
-							<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
-								<path fill="#FFFFFF" d="M1 1 L31 1 L31 31 L1 31 L1 1 "/>
-							</svg>
-						</div>
+        // function initClient3() {
+        //   gapi.client.init({
+        //     discoveryDocs: DISCOVERY_DOCS,
+        //     clientId: client_2,
+        //     scope: SCOPES
+        //   }).then(function () {
+        //     // Listen for sign-in state changes.
+        //     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-					</div>
+        //     // Handle the initial sign-in state.
+        //     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        //     authorizeButton.onclick = handleAuthClick;
+        //     signoutButton.onclick = handleSignoutClick;
+        //   });
+        // }
 
-					<div id="group_11"  >
-						<div id="news" >
-							News
-						</div>
-						<div id="neighborhoods" >
-							Neighborhoods
-						</div>
-						<div id="sports" >
-							Sports
-						</div>
-						<div id="events" >
-							Events
-						</div>
-						<div id="social" >
-							Social
-						</div>
+        /**
+         *  Called when the signed in status changes, to update the UI
+         *  appropriately. After a sign-in, the API is called.
+         */
+        function updateSigninStatus(isSignedIn) {
+            if (isSignedIn) {
+                authorizeButton.style.display = 'none';
+                signoutButton.style.display = 'block';
+                getChannel();
+            } else {
+                authorizeButton.style.display = 'block';
+                signoutButton.style.display = 'none';
+            }
+        }
 
-					</div>
-					<img src="{% static "e_next_page__copy_5.png" %}" id="_e_next_page__copy_5" />
-					<div id="channels_1" >
-						Channels
-					</div>
+        /**
+         *  Sign in the user upon button click.
+         */
+        function handleAuthClick(event) {
+            gapi.auth2.getAuthInstance().signIn();
+        }
 
-				</div>
+        /**
+         *  Sign out the user upon button click.
+         */
+        function handleSignoutClick(event) {
+            gapi.auth2.getAuthInstance().signOut();
+        }
 
-				<div id="header"  >
-					<div id="rectangle_1" >
-						<svg width="1920" height="100" xmlns="http://www.w3.org/2000/svg">
-							<path fill="#0A589A" d="M1 1 L1921 1 L1921 101 L1 101 L1 1 " opacity="0.9"/>
-						</svg>
-					</div>
+        /**
+         * Append text to a pre element in the body, adding the given message
+         * to a text node in that element. Used to display info from API response.
+         *
+         * @param {string} message Text to be placed in pre element.
+         */
+        function appendPre(message) {
+            var pre = document.getElementById('content');
+            var textContent = document.createTextNode(message + '\n');
+            pre.appendChild(textContent);
+        }
 
-					<div id="log_in"  >
-						<img src="{% static "e_next_page__copy_6.png" %}" id="_e_next_page__copy_6" />
-						<div id="derick_armstead" >
-							{{ user.get_username }}
-						</div>
-						<img src="{% static "e_fullsizerender.png" %}" id="_e_fullsizerender" />
+        /**
+         * Print files.
+         */
+        function getChannel() {
+            gapi.client.youtube.channels.list({
+                'part': 'snippet,contentDetails,statistics',
+                'forUsername': 'GoogleDevelopers'
+            }).then(function(response) {
+                var channel = response.result.items[0];
+                appendPre('This channel\'s ID is ' + channel.id + '. ' +
+                          'Its title is \'' + channel.snippet.title + ', ' +
+                          'and it has ' + channel.statistics.viewCount + ' views.';
+            });
+        }
 
-					</div>
+    </script>
 
-					<div id="_ge_logo"  >
-						<div id="live_stream_1" >
-							LIVE STREAM
-						</div>
-						<img src="{% static "vector_smart_object_copy_2.png" %}" id="vector_smart_object_copy_2" />
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-	</body>
+    <script async defer src="https://apis.google.com/js/api.js"
+            onload="this.onload=function(){};handleClientLoad()"
+            onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+</body>
 </html>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70ef7ac4-cb2b-4679-ab07-f90420ac800a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/map.html" afterPath="$PROJECT_DIR$/hello/templates/map.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="514">
@@ -23,21 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index_backup.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello/templates/index_backup.html">
+      <file leaf-file-name="AJCLiveMap.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/GreenArrow/AJCLiveMap.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/GreenArrow/Login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="45">
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -53,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello/templates/map.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="180" column="51" lean-forward="false" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
+            <state relative-caret-position="559">
+              <caret line="196" column="7" lean-forward="false" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -87,26 +77,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AJC-Live_stream.html" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/ftml-www 3/html5/AJC-Live_stream.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="live_stream.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hello/templates/live_stream.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -124,8 +94,9 @@
       <find>LOGIN_REDIRECT_URL</find>
       <find>log in</find>
       <find>username</find>
-      <find>login</find>
       <find>png</find>
+      <find>login</find>
+      <find>style</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,9 +109,10 @@
         <option value="$PROJECT_DIR$/gettingstarted/urls.py" />
         <option value="$PROJECT_DIR$/gettingstarted/settings.py" />
         <option value="$PROJECT_DIR$/hello/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/hello/templates/map.html" />
         <option value="$PROJECT_DIR$/hello/views.py" />
         <option value="$PROJECT_DIR$/hello/templates/index.html" />
+        <option value="$USER_HOME$/Downloads/GreenArrow/AJCLiveMap.html" />
+        <option value="$PROJECT_DIR$/hello/templates/map.html" />
       </list>
     </option>
   </component>
@@ -350,14 +322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/templates/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="180" column="51" lean-forward="false" selection-start-line="180" selection-start-column="51" selection-end-line="180" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/templates/index_backup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -380,6 +344,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="48" column="74" lean-forward="false" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/GreenArrow/AJCLiveMap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="196" column="7" lean-forward="false" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
           <folding />
         </state>
       </provider>
