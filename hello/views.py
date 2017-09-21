@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.urls import reverse
 
 from .models import Greeting
 
@@ -8,7 +10,8 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 def index(request):
     if request.user.is_authenticated():
-        return render(request, 'live_news_links.html')
+        #return render(request, 'live_news_links.html')
+        return HttpResponseRedirect(reverse('live_news_links', args=[]))
     else:
         # return HttpResponse('Hello from Python!')
         return render(request, 'index.html')
