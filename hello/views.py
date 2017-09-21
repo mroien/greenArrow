@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login
 # Create your views here.
 def index(request):
     if request.user.is_authenticated():
-        return render(request, 'map.html')
+        return render(request, 'live_news_links.html')
     else:
         # return HttpResponse('Hello from Python!')
         return render(request, 'index.html')
