@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70ef7ac4-cb2b-4679-ab07-f90420ac800a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gettingstarted/urls.py" afterPath="$PROJECT_DIR$/gettingstarted/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/views.py" afterPath="$PROJECT_DIR$/hello/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hello/templates/index.html" afterPath="$PROJECT_DIR$/hello/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+            <state relative-caret-position="216">
+              <caret line="45" column="93" lean-forward="false" selection-start-line="45" selection-start-column="93" selection-end-line="45" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -34,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hello/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -101,11 +100,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hello/templates/index.html" />
         <option value="$PROJECT_DIR$/hello/templates/map.html" />
         <option value="$PROJECT_DIR$/hello/templates/live_stream.html" />
         <option value="$PROJECT_DIR$/gettingstarted/urls.py" />
         <option value="$PROJECT_DIR$/hello/views.py" />
+        <option value="$PROJECT_DIR$/hello/templates/index.html" />
       </list>
     </option>
   </component>
@@ -272,14 +271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/ftml-www 3/html5/AJC-Live_stream.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -329,6 +320,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="45" column="93" lean-forward="false" selection-start-line="45" selection-start-column="93" selection-end-line="45" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>
