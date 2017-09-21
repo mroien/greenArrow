@@ -9,8 +9,12 @@ def index(request):
     return render(request, 'index.html')
 
 
-def map(request):
+def live_map(request):
     return render(request, 'map.html')
+
+
+def live_stream(request):
+    return render(request, 'live_stream.html')
 
 
 def db(request):
