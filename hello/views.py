@@ -13,7 +13,14 @@ def index(request):
 
 
 def live_map(request):
-    return render(request, 'map.html')
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return render(request, 'map.html')
+    else:
+        return render(request, 'index.html')
 
 
 def live_stream(request):
