@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 from .models import Greeting
 
+from django.contrib.auth import authenticate, login
+
 # Create your views here.
 def index(request):
     if request.user.is_authenticated():
