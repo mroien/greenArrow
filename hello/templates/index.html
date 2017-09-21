@@ -43,7 +43,11 @@
 							</svg>
 						</div>
 						<div id="log_in_1" >
-							Log In<a href="http://google.com" class="button">Go to Google</a>
+							<form method="post">
+    							{% csrf_token %}
+    							{{ form.as_p }}
+    							<button type="submit">Login</button>
+  							</form>
 						</div>
 
 					</div>
