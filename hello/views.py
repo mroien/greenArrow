@@ -5,8 +5,11 @@ from .models import Greeting
 
 # Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
-    return render(request, 'index.html')
+    if request.user.is_authenticated():
+        return render(request, 'map.html')
+    else:
+        # return HttpResponse('Hello from Python!')
+        return render(request, 'index.html')
 
 
 def live_map(request):
